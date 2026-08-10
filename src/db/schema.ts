@@ -49,6 +49,7 @@ export const concretePours = pgTable("concrete_pours", {
   date: text("date").notNull(),
   clientName: text("client_name").notNull(),
   cubicMeters: numeric("cubic_meters", { precision: 12, scale: 2 }).notNull(),
+  location: text("location"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 });
 
