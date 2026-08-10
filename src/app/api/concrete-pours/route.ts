@@ -25,7 +25,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const body = await request.json();
-
+body.location = body.location || "";
   const [newPour] = await db
     .insert(concretePours)
     .values({
@@ -33,6 +33,7 @@ export async function POST(request: Request) {
       date: body.date,
       clientName: body.clientName,
       cubicMeters: body.cubicMeters,
+      location: body.location
     })
     .returning();
 
