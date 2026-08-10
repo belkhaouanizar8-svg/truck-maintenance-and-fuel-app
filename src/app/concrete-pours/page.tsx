@@ -14,6 +14,7 @@ type Pour = {
   date: string;
   clientName: string;
   cubicMeters: string;
+  location: string;
 };
 
 export default function ConcretePoursPage() {
@@ -23,6 +24,7 @@ export default function ConcretePoursPage() {
   const [date, setDate] = useState("");
   const [clientName, setClientName] = useState("");
   const [cubicMeters, setCubicMeters] = useState("");
+  const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(true);
 
   async function loadData() {
@@ -52,11 +54,13 @@ export default function ConcretePoursPage() {
         date,
         clientName,
         cubicMeters,
+        location,
       }),
     });
     setTruckId("");
     setDate("");
     setClientName("");
+    setLocation("");
     setCubicMeters("");
     loadData();
   }
@@ -181,7 +185,14 @@ export default function ConcretePoursPage() {
           onChange={(e) => setClientName(e.target.value)}
           required
           style={{ padding: 8, flex: 1, minWidth: 150 }}
-        />
+              />
+          <input
+                type="text"
+                placeholder="Chantier"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                style={{ padding: 8, flex: 1, minWidth: 150 }}
+              />
         <input
           type="number"
           step="0.01"
