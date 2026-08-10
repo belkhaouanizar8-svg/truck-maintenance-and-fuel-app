@@ -62,7 +62,7 @@ export default function ConcretePoursPage() {
   }
 
   async function handleDelete(id: number) {
-    await fetch(/api/concrete-pours?id=${id}, { method: "DELETE" });
+    await  fetch(`/api/concrete-pours?id=${id}, { method: "DELETE" });
     loadData();
   }
 
