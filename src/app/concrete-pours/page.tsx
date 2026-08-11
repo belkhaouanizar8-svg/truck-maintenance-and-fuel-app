@@ -91,6 +91,7 @@ export default function ConcretePoursPage() {
           <tr><td>Date</td><td>${pour.date}</td></tr>
           <tr><td>Camion</td><td>${pour.truckName}</td></tr>
           <tr><td>Client / Chantier</td><td>${pour.clientName}</td></tr>
+      <tr><td>Chantier</td><td>${pour.location}</td></tr>
           <tr><td>Volume coulé</td><td>${pour.cubicMeters} m³</td></tr>
         </table>
       </body>
