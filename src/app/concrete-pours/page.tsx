@@ -229,10 +229,10 @@ style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}        />
         <tbody>
           {pours.map((p) => (
             <tr key={p.id} style={{ borderBottom: "1px solid #ddd" }}>
-              <td style={{ padding: 8, color: "#000"}} }}>{p.date}</td>
-              <td style={{ padding: 8, color: "#000"}} }}>{p.truckName}</td>
-              <td style={{ padding: 8, color: "#000"}} }}>{p.clientName}</td>
-              <td style={{ padding: 8, color: "#000"}} }}>{p.cubicMeters}</td>
+              <td style={{ padding: 8, color: "#000" }}>{p.date}</td>
+              <td style={{ padding: 8, color: "#000" }}>{p.truckName}</td>
+              <td style={{ padding: 8, color: "#000" }}>{p.clientName}</td>
+              <td style={{ padding: 8, color: "#000" }}>{p.cubicMeters}</td>
               <td style={{ padding: 8, color: "#000"}}, display: "flex", gap: 8 }}>
                 <button
                   onClick={() => printReceipt(p)}
