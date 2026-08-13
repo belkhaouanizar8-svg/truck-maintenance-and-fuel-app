@@ -233,7 +233,7 @@ style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}        />
               <td style={{ padding: 8, color: "#000" }}>{p.truckName}</td>
               <td style={{ padding: 8, color: "#000" }}>{p.clientName}</td>
               <td style={{ padding: 8, color: "#000" }}>{p.cubicMeters}</td>
-              <td style={{ padding: 8, color: "#000"}}, display: "flex", gap: 8 }}>
+              <td style={{ padding: 8, color: "#000", display: "flex", gap: 8 }}>
                 <button
                   onClick={() => printReceipt(p)}
                   style={{
