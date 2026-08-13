@@ -147,7 +147,7 @@ export default function ConcretePoursPage() {
           value={truckId}
           onChange={(e) => setTruckId(e.target.value)}
           required
-          style={{ padding: 8 }}
+          style={{ padding: 8, color: "#000"}}
         >
           <option value="">Choisir camion</option>
           {trucks.map((t) => (
@@ -161,7 +161,7 @@ export default function ConcretePoursPage() {
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
-          style={{ padding: 8 }}
+          style={{ padding: 8, color: "#000"}}
         />
         <input
           type="text"
@@ -169,14 +169,14 @@ export default function ConcretePoursPage() {
           value={clientName}
           onChange={(e) => setClientName(e.target.value)}
           required
-          style={{ padding: 8, flex: 1, minWidth: 150 }}
+          style={{ padding: 8, color: "#000"}}, flex: 1, minWidth: 150 }}
         />
         <input
           type="text"
           placeholder="Chantier"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          style={{ padding: 8, flex: 1, minWidth: 150 }}
+          style={{ padding: 8, color: "#000"}}, flex: 1, minWidth: 150 }}
         />
         <input
           type="number"
@@ -185,7 +185,7 @@ export default function ConcretePoursPage() {
           value={cubicMeters}
           onChange={(e) => setCubicMeters(e.target.value)}
           required
-          style={{ padding: 8, width: 100 }}
+          style={{ padding: 8, color: "#000"}}, width: 100 }}
         />
         <button
           type="submit"
@@ -220,21 +220,21 @@ export default function ConcretePoursPage() {
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr style={{ background: "#eee" }}>
-            <th style={{ padding: 8, textAlign: "left" }}>Date</th>
-            <th style={{ padding: 8, textAlign: "left" }}>Camion</th>
-            <th style={{ padding: 8, textAlign: "left" }}>Client</th>
-            <th style={{ padding: 8, textAlign: "left" }}>m³</th>
-            <th style={{ padding: 8, textAlign: "left" }}>Actions</th>
+            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Date</th>
+            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Camion</th>
+            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Client</th>
+            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>m³</th>
+            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Actions</th>
           </tr>
         </thead>
         <tbody>
           {pours.map((p) => (
             <tr key={p.id} style={{ borderBottom: "1px solid #ddd" }}>
-              <td style={{ padding: 8 }}>{p.date}</td>
-              <td style={{ padding: 8 }}>{p.truckName}</td>
-              <td style={{ padding: 8 }}>{p.clientName}</td>
-              <td style={{ padding: 8 }}>{p.cubicMeters}</td>
-              <td style={{ padding: 8, display: "flex", gap: 8 }}>
+              <td style={{ padding: 8, color: "#000"}} }}>{p.date}</td>
+              <td style={{ padding: 8, color: "#000"}} }}>{p.truckName}</td>
+              <td style={{ padding: 8, color: "#000"}} }}>{p.clientName}</td>
+              <td style={{ padding: 8, color: "#000"}} }}>{p.cubicMeters}</td>
+              <td style={{ padding: 8, color: "#000"}}, display: "flex", gap: 8 }}>
                 <button
                   onClick={() => printReceipt(p)}
                   style={{
