@@ -219,11 +219,11 @@ style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}        />
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr style={{ background: "#eee" }}>
-            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Date</th>
-            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Camion</th>
-            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Client</th>
-            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>m³</th>
-            <th style={{ padding: 8, color: "#000"}}, textAlign: "left" }}>Actions</th>
+            <th style={{ padding: 8, color: "#000", textAlign: "left" }}>Date</th>
+            <th style={{ padding: 8, color: "#000", textAlign: "left" }}>Camion</th>
+            <th style={{ padding: 8, color: "#000", textAlign: "left" }}>Client</th>
+            <th style={{ padding: 8, color: "#000", textAlign: "left" }}>m³</th>
+            <th style={{ padding: 8, color: "#000", textAlign: "left" }}>Actions</th>
           </tr>
         </thead>
         <tbody>
