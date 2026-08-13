@@ -184,7 +184,7 @@ style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}        />
           value={cubicMeters}
           onChange={(e) => setCubicMeters(e.target.value)}
           required
-          style={{ padding: 8, color: "#000"}}, width: 100 }}
+          style={{ padding: 8, color: "#000", width: 100 }}
         />
         <button
           type="submit"
