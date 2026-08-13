@@ -169,14 +169,13 @@ export default function ConcretePoursPage() {
           value={clientName}
           onChange={(e) => setClientName(e.target.value)}
           required
-          style={{ padding: 8, color: "#000"}}, flex: 1, minWidth: 150 }}
-        />
+style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}        />
         <input
           type="text"
           placeholder="Chantier"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          style={{ padding: 8, color: "#000"}}, flex: 1, minWidth: 150 }}
+          style={{ padding: 8, color: "#000", flex: 1, minWidth: 150 }}
         />
         <input
           type="number"
