@@ -66,37 +66,29 @@ export default function ConcretePoursPage() {
   }
 
   async function handleDelete(id: number) {
-    await  fetch(`/api/concrete-pours?id=${id}, { method: "DELETE" });
+    await fetch("/api/concrete-pours?id=" + id, { method: "DELETE" });
     loadData();
   }
 
   function printReceipt(pour: Pour) {
     const win = window.open("", "_blank");
     if (!win) return;
-    win.document.write(`
-      <html>
-      <head>
-        <title>Fiche Pompe à Béton</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 40px; }
-          h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
-          table { width: 100%; margin-top: 20px; border-collapse: collapse; }
-          td { padding: 10px; border-bottom: 1px solid #ddd; }
-          td:first-child { font-weight: bold; width: 200px; }
-        </style>
-      </head>
-      <body>
-        <h1>Fiche Pompe à Béton</h1>
-        <table>
-          <tr><td>Date</td><td>${pour.date}</td></tr>
-          <tr><td>Camion</td><td>${pour.truckName}</td></tr>
-          <tr><td>Client / Chantier</td><td>${pour.clientName}</td></tr>
-      <tr><td>Chantier</td><td>${pour.location}</td></tr>
-          <tr><td>Volume coulé</td><td>${pour.cubicMeters} m³</td></tr>
-        </table>
-      </body>
-      </html>
-    `);
+    var html = "<html><head><title>Fiche Pompe a Beton</title>";
+    html += "<style>";
+    html += "body { font-family: Arial, sans-serif; padding: 40px; }";
+    html += "h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }";
+    html += "table { width: 100%; margin-top: 20px; border-collapse: collapse; }";
+    html += "td { padding: 10px; border-bottom: 1px solid #ddd; }";
+    html += "td:first-child { font-weight: bold; width: 200px; }";
+    html += "</style></head><body>";
+    html += "<h1>Fiche Pompe a Beton</h1><table>";
+    html += "<tr><td>Date</td><td>" + pour.date + "</td></tr>";
+    html += "<tr><td>Camion</td><td>" + pour.truckName + "</td></tr>";
+    html += "<tr><td>Client / Chantier</td><td>" + pour.clientName + "</td></tr>";
+    html += "<tr><td>Chantier</td><td>" + pour.location + "</td></tr>";
+    html += "<tr><td>Volume coule</td><td>" + pour.cubicMeters + " m3</td></tr>";
+    html += "</table></body></html>";
+    win.document.write(html);
     win.document.close();
     win.print();
   }
@@ -110,31 +102,23 @@ export default function ConcretePoursPage() {
 
     const win = window.open("", "_blank");
     if (!win) return;
-    let rows = "";
+    var rows = "";
     totalsByTruck.forEach((total, name) => {
-      rows += <tr><td>${name}</td><td>${total.toFixed(2)} m³</td></tr>;
+      rows += "<tr><td>" + name + "</td><td>" + total.toFixed(2) + " m3</td></tr>";
     });
 
-    win.document.write(`
-      <html>
-      <head>
-        <title>Rapport Global Pompe à Béton</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 40px; }
-          h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
-          table { width: 100%; margin-top: 20px; border-collapse: collapse; }
-          th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
-        </style>
-      </head>
-      <body>
-        <h1>Rapport Global - Total m³ par Camion</h1>
-        <table>
-          <tr><th>Camion</th><th>Total m³</th></tr>
-          ${rows}
-        </table>
-      </body>
-      </html>
-    `);
+    var html2 = "<html><head><title>Rapport Global Pompe a Beton</title>";
+    html2 += "<style>";
+    html2 += "body { font-family: Arial, sans-serif; padding: 40px; }";
+    html2 += "h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }";
+    html2 += "table { width: 100%; margin-top: 20px; border-collapse: collapse; }";
+    html2 += "th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }";
+    html2 += "</style></head><body>";
+    html2 += "<h1>Rapport Global - Total m3 par Camion</h1><table>";
+    html2 += "<tr><th>Camion</th><th>Total m3</th></tr>";
+    html2 += rows;
+    html2 += "</table></body></html>";
+    win.document.write(html2);
     win.document.close();
     win.print();
   }
@@ -186,14 +170,14 @@ export default function ConcretePoursPage() {
           onChange={(e) => setClientName(e.target.value)}
           required
           style={{ padding: 8, flex: 1, minWidth: 150 }}
-              />
-          <input
-                type="text"
-                placeholder="Chantier"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                style={{ padding: 8, flex: 1, minWidth: 150 }}
-              />
+        />
+        <input
+          type="text"
+          placeholder="Chantier"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          style={{ padding: 8, flex: 1, minWidth: 150 }}
+        />
         <input
           type="number"
           step="0.01"
