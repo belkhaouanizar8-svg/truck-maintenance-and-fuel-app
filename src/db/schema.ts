@@ -59,3 +59,18 @@ export type Repair = typeof repairs.$inferSelect;
 export type FuelEntry = typeof fuelEntries.$inferSelect;
 export type ConcretePour = typeof concretePours.$inferSelect;
 export type NewConcretePour = typeof concretePours.$inferInsert;
+export const purchases = pgTable("purchases", {
+  id: serial("id").primaryKey(),
+  truckId: integer("truck_id").references(() => trucks.id, { onDelete: "cascade" }),
+  date: text("date").notNull(),
+  category: text("category").notNull(),
+  itemName: text("item_name").notNull(),
+  quantity: numeric("quantity", { precision: 12, scale: 2 }),
+  unit: text("unit"),
+  price: numeric("price", { precision: 12, scale: 2 }).notNull(),
+  notes: text("notes"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export type Purchase = typeof purchases.$inferSelect;
+export type NewPurchase = typeof purchases.$inferInsert;
